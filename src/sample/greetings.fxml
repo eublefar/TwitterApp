@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language JavaScript?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+
+<?import java.net.URL?>
+
+<GridPane id="grid-pane" alignment="CENTER_LEFT" hgap="10.0" vgap="15.0"
+          fx:controller="sample.GreetingForm"
+          xmlns:fx="http://javafx.com/fxml"
+            >
+    <stylesheets>
+        <URL value="@TwitterLike.css" />
+    </stylesheets>
+    <padding>
+        <Insets bottom="60.0" left="60.0" right="10.0" top="60.0" />
+    </padding>
+
+    <Label style="-fx-font: BOLD 45 sans-serif;" text="Welcome "
+           GridPane.columnIndex="0" GridPane.rowIndex="0">
+    </Label>
+
+    <Label style="-fx-font: NORMAL 20 'Times New Roman';" text=""
+           GridPane.columnIndex="0" GridPane.rowIndex="1">
+    </Label>
+    <Label style="-fx-font: NORMAL 14 'Times New Roman';" text="You will be asked to authorize our app. Just log in and press the button. "
+           GridPane.columnIndex="0" GridPane.rowIndex="2" wrapText="true">
+        <padding>
+            <Insets bottom="100.0" left="10.0" right="0.0" top="35.0" />
+        </padding>
+    </Label>
+    <Button style="-fx-font: BOLD 20 sans-serif;" text="Lets GO!" onAction="#onLetsGo"
+            GridPane.columnIndex="0" GridPane.rowIndex="3" alignment="CENTER_RIGHT" >
+    </Button>
+</GridPane>
+

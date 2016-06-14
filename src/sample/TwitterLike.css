@@ -1,0 +1,29 @@
+@text-color: #3F3E3D;
+@border-color: #D2D2D2;
+@content-width: 860px;
+
+#root123 {
+        -fx-background-color: red;
+   -fx-border-radius: 5px;
+    -fx-border-color: #D2D2D2;
+}
+
+#grid-pane {
+    -fx-background-image: url("blue-zones-1500x900.jpg");
+    -fx-background-repeat: stretch;
+
+
+}
+
+
+.label {
+    -fx-effect: dropshadow( gaussian , #067296 , 0,0,1,1 );
+    -fx-text-fill: #EDEDED;
+}
+
+.button {
+
+-fx-effect: dropshadow( gaussian , #067296 , 0,0,0,1 );
+-fx-background-color: #51C2E8;
+-fx-text-fill: #EBEDED;
+}
