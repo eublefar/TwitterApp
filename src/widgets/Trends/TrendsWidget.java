@@ -1,13 +1,10 @@
-package sample;
+package widgets.Trends;
 
+import widgets.Widget;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.Pane;
 import twitter4j.*;
 
 import java.io.IOException;
@@ -60,9 +57,6 @@ public class TrendsWidget extends Widget {
         public TrendsController() {
 
         }
-        @FXML
-        private void onAction(ActionEvent event) {
-            ((Pane)THIS.getParent()).getChildren().remove(THIS);
-        }
+
     }
 }

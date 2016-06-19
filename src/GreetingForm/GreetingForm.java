@@ -1,12 +1,10 @@
-package sample;
+package GreetingForm;
 
 import javafx.application.Platform;
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 import twitter4j.*;
 import twitter4j.auth.AccessToken;
 
@@ -57,7 +55,7 @@ public class GreetingForm {
                 Main.primaryStage.hide();
                 Pane myPane = null;
                 try {
-                    myPane = (Pane) FXMLLoader.load(getClass().getResource("main_window.fxml"));
+                    myPane = (Pane) FXMLLoader.load(getClass().getResource("../MainWindow/main_window.fxml"));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

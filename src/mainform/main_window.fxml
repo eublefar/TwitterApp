@@ -11,7 +11,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 
-<BorderPane id="background" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="sample.MainForm">
+<?import javafx.scene.control.ScrollPane?>
+<BorderPane id="background" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainform.MainForm">
     <top>
         <ToolBar fx:id="toolBar">
             <items>
@@ -20,11 +21,11 @@
                     <MenuButton maxHeight="10" maxWidth="10" text="">
                         <graphic>
                             <ImageView>
-                                <Image url="@edit_add.png" />
+                                <Image url="@../Resources/edit_add.png" />
                             </ImageView>
                         </graphic>
                   <items>
-                     <MenuItem mnemonicParsing="false" text="top 10 trends" />
+                     <MenuItem mnemonicParsing="false" text="top 10 trends" onAction="#onAction" />
                      <MenuItem mnemonicParsing="false" text="Unspecified Action" />
                   </items>
                     </MenuButton>
@@ -33,9 +34,11 @@
         </ToolBar>
     </top>
 <center>
-<FlowPane id="flowpane" alignment="CENTER_LEFT" hgap="10.0" vgap="15.0">
+    <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER"  >
+       <FlowPane fx:id="flowpane" alignment="TOP_LEFT" hgap="10.0" vgap="15.0">
 
 
-</FlowPane>
+        </FlowPane>
+    </ScrollPane>
 </center>
 </BorderPane>
