@@ -5,6 +5,7 @@ import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.control.ProgressIndicator;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -18,7 +19,7 @@ public class Widget extends StackPane {
     protected StackPane THIS = this;
     protected Pane widgetPane;
     private ProgressIndicator progressIndicator;
-    public Widget( String widgetFXMLName) throws IOException {
+    public Widget(String widgetFXMLName) throws IOException {
         super();
         loadWidgetPane(widgetFXMLName);
         this.getChildren().add(widgetPane);
@@ -53,8 +54,10 @@ public class Widget extends StackPane {
     }
     private void loadWidgetPane(String widgetFXMLName) throws IOException {
         widgetPane = (Pane) FXMLLoader.load(getClass().getResource(widgetFXMLName));
-
+        if(widgetPane instanceof BorderPane) System.out.println("widgetPane is BorderPane");
     }
+
+
 
     protected void initBgWorker() {
 
@@ -62,5 +65,36 @@ public class Widget extends StackPane {
 
     protected void updateUI() {
 
+    }
+    public void forceUpdateUI() {
+        progressIndicator = new ProgressIndicator();
+        VBox box = new VBox(progressIndicator);
+        box.setAlignment(Pos.CENTER);
+        // Grey Background
+        widgetPane.setDisable(true);
+        this.getChildren().add(box);
+
+        Task<Integer> task = new Task<Integer>() {
+            @Override
+            protected Integer call() throws Exception {
+
+                initBgWorker();
+                System.out.println("widget background");
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        updateUI();
+                        System.out.println("widget run later");
+                        widgetPane.setDisable(false);
+                        THIS.getChildren().remove(box);
+                    }
+                });
+                return 0;
+            }
+        };
+
+        Thread th = new Thread(task);
+        th.setDaemon(true);
+        th.start();
     }
 }

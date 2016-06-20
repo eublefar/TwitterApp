@@ -9,7 +9,7 @@
 <?import java.net.URL?>
 
 <GridPane id="grid-pane" alignment="CENTER_LEFT" hgap="10.0" vgap="15.0"
-          fx:controller="GreetingForm.GreetingForm"
+          fx:controller="greetingform.GreetingForm"
           xmlns:fx="http://javafx.com/fxml"
             >
     <stylesheets>

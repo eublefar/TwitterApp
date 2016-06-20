@@ -1,4 +1,4 @@
-package GreetingForm;
+package greetingform;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -55,7 +55,7 @@ public class GreetingForm {
                 Main.primaryStage.hide();
                 Pane myPane = null;
                 try {
-                    myPane = (Pane) FXMLLoader.load(getClass().getResource("../MainWindow/main_window.fxml"));
+                    myPane = (Pane) FXMLLoader.load(getClass().getResource("../mainform/main_window.fxml"));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

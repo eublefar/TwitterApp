@@ -12,7 +12,7 @@ import javafx.scene.layout.Pane;
 public class WidgetController {
 @FXML private Pane root;
     @FXML
-    private void onAction(ActionEvent event) {
+    private void onClose(ActionEvent event) {
         ((Pane)root.getParent()).getChildren().remove(root);
     }
 }

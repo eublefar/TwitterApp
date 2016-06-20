@@ -21,7 +21,7 @@
                     <MenuButton maxHeight="10" maxWidth="10" text="">
                         <graphic>
                             <ImageView>
-                                <Image url="@../Resources/edit_add.png" />
+                                <Image url="@../resources/edit_add.png" />
                             </ImageView>
                         </graphic>
                   <items>

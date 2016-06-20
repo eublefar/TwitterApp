@@ -1,6 +1,7 @@
 package mainform;
 
-import TwitterWidgets.Trends.TrendsWidget;
+import twitter4j.TwitterException;
+import widgets.trends.TrendsWidget;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ScrollPane;
@@ -23,7 +24,7 @@ public class MainForm {
 
     }
     @FXML
-    private void onAction(ActionEvent event) throws IOException {
+    private void onAction(ActionEvent event) throws IOException, TwitterException {
         System.out.println(flowpane==null);
         flowpane.getChildren().add(new TrendsWidget());
         flowpane.prefWrapLengthProperty().bind(scrollPane.widthProperty().subtract(50));
