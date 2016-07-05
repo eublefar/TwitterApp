@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -96,5 +97,34 @@ public class Widget extends StackPane {
         Thread th = new Thread(task);
         th.setDaemon(true);
         th.start();
+    }
+
+    protected Node getFirstNodeAt(Class<?> ... args) {
+        Node result;
+        result = widgetPane;
+        for(Class<?> NodeClass : args ) {
+            for(Node i : ((Pane) result).getChildren()) {
+                System.out.println(NodeClass.getName()+ " -->" + i.getClass().getName());
+                if(i.getClass() == NodeClass) {
+                    result = i;
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+    protected Node getLastNodeAt(Class<?> ... args) {
+        Node result;
+        result = widgetPane;
+        for(Class<?> NodeClass : args ) {
+            for(Node i : ((Pane) result).getChildren()) {
+                System.out.println(NodeClass.getName()+ " -->" + i.getClass().getName());
+                if(i.getClass() == NodeClass) {
+                    result = i;
+                }
+            }
+        }
+        return result;
     }
 }

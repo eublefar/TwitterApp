@@ -1,6 +1,7 @@
 package mainform;
 
 import twitter4j.TwitterException;
+import widgets.lexicaldiversity.LexDivWidget;
 import widgets.trends.TrendsWidget;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,10 +25,15 @@ public class MainForm {
 
     }
     @FXML
-    private void onAction(ActionEvent event) throws IOException, TwitterException {
+    private void onTrendsWidget(ActionEvent event) throws IOException, TwitterException {
         System.out.println(flowpane==null);
         flowpane.getChildren().add(new TrendsWidget());
         flowpane.prefWrapLengthProperty().bind(scrollPane.widthProperty().subtract(50));
-
+    }
+    @FXML
+    private void onLexDivWidget(ActionEvent event) throws IOException, TwitterException {
+        System.out.println(flowpane==null);
+        flowpane.getChildren().add(new LexDivWidget());
+        flowpane.prefWrapLengthProperty().bind(scrollPane.widthProperty().subtract(50));
     }
 }

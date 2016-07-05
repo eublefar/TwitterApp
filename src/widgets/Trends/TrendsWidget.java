@@ -20,7 +20,7 @@ public class TrendsWidget extends Widget {
     public ResponseList<Location> locations;
     private Twitter twitter;
     private Trends trends;
-    public static final ObservableList data =
+    public final ObservableList data =
             FXCollections.observableArrayList();
 
     public TrendsWidget() throws IOException {

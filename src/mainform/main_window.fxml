@@ -25,8 +25,8 @@
                             </ImageView>
                         </graphic>
                   <items>
-                     <MenuItem mnemonicParsing="false" text="top 10 trends" onAction="#onAction" />
-                     <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     <MenuItem mnemonicParsing="false" text="Top 10 trends" onAction="#onTrendsWidget" />
+                     <MenuItem mnemonicParsing="false" text="Lexical diversity" onAction="#onLexDivWidget" />
                   </items>
                     </MenuButton>
                 </HBox>
