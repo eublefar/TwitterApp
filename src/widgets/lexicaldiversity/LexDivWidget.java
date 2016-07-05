@@ -54,11 +54,11 @@ public class LexDivWidget extends Widget {
                     for (User user : pagableFollowings) {
                         listFriends.add(user); // ArrayList<User>
                         friendList.put(user.getScreenName(), user.getId());
-                        System.out.println(user.getScreenName());
+//                        System.out.println(user.getScreenName());
                     }
                 } while ((cursor = pagableFollowings.getNextCursor()) != 0);
                bc = (BarChart<String,Number>) getFirstNodeAt(HBox.class, BarChart.class);
-//                bc.getData().add(new XYChart.Series<String,Number>());
+
             } catch (TwitterException e) {
                 e.printStackTrace();
             }
@@ -75,9 +75,7 @@ public class LexDivWidget extends Widget {
         if(filterUpdated) {
             userList.clear();
             ListView lv =null;
-            for (String userName : friendList.keySet()) {
-                System.out.println(userName);
-            }
+
             for (String userName : friendList.keySet()) {
                 if (Pattern.compile(filter).matcher(userName).matches()) {
 
